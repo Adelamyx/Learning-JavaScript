@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字号变大变小</title>
+	<style>
+		.red1{
+			width: 300px;
+			background-color: pink;
+			border: 10px solid #ccc;
+			color: white;
+			line-height: 30px;
+			font-size: 18px;
+		}
+		.yellow1{
+			width: 300px;
+			background-color: yellow;
+			border: 10px solid #ccc;
+			color: pink;
+			line-height: 30px;
+			font-size: 18px;
+		}
+	</style>
+	<script>
+		window.onload=function (){
+			var oLage =document.getElementById('lage');
+			var oSmall =document.getElementById('small');
+			var oP =document.getElementById('p');
+			var oRed =document.getElementById('red');
+			var oYellow =document.getElementById('yellow');
+			oLage.onclick=function(){
+				//debugger
+				//数据类型装换
+				var a=parseInt(oP.style.fontSize);
+				if (a < 22){
+					a++;
+					oP.style.fontSize=a+'px';
+					//alert(a);
+				}else {
+					alert('到了最大了');
+				}		
+			};	
+			oSmall.onclick=function(){
+				var b=parseInt(oP.style.fontSize);
+				if(b >13){
+					b--;
+					oP.style.fontSize=b+'px';
+					//alert(b);
+				}else {
+					alert('到了最小');
+				}	
+			};
+			oRed.onclick=function(){
+				oP.className='red1';
+			};
+			oYellow.onclick=function(){
+				oP.className='yellow1';
+			};
+		};
+	</script>
+</head>
+<body>
+	<input type="button" value="+" id="lage">
+	<input type="button" value="- " id="small">
+	<input type="button" value="红色" id="red">
+	<input type="button" value="黄色" id="yellow">
+	<p id='p' style="font-size: 16px;"> 专题会议要求各新闻单位准确做好会议程序性报道，突出新闻元素，体现改文风要求；深入解读重要报告、决议和文件，推出有分量、有深度、有影响的栏目和稿件；按照全方位、多角度、宽视野原则，充分报道好我省代表委员履职情况。</p>
+</body>
+</html>

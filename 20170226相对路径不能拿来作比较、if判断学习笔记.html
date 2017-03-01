@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20170226学习笔记</title>
+	<style>
+		#div1{
+			width: 200px;
+			height: 160px;
+			border: 10px solid #ccc;
+			background-color: pink;
+			margin-top: 20px;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oText1=document.getElementById('text1');
+			var oText2=document.getElementById('text2');
+			var oBtton1=document.getElementById('button1');
+			var oDiv1=document.getElementById('div1');
+			oBtton1.onclick=function(){
+				//debugger
+				oDiv1.style[oText1.value]=oText2.value;
+			};
+		};
+	</script>
+</head>
+<body>
+	<!-- 所有的相对路径 都别拿来做判断
+	img src
+	href 
+	颜色值不要用来做判断
+	innerHTML 值不要用来做判断 -->
+	<span>请输入属性名称：</span>
+	<input type="text" id="text1">
+	<span>请输入属性值：</span>
+	<input type="text" id="text2">
+	<input type="button" value="确定" id="button1">
+	<div id="div1"></div>
+
+	<!-- if条件判断 -->
+	<!-- 详见：20170225字号变大变小、数据类型转换、className.html这个demo -->
+	<!-- if-else条件判断 -->
+	<!-- 详见：20170225属性读写操作、innerHTML小实例、小短信发送.html这个demo
+	 -->
+
+</body>
+</html>

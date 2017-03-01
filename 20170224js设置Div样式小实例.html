@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>设置DIV样式</title>
+	<style>
+		ul,li{ list-style: none; }
+		ul,li,span {display: inline-block; float: left: }
+		li {
+			width: 30px;
+			height: 30px;
+			background-color: yellow;
+			line-height: 30px;
+			text-align: center;
+		}
+		#bodyContent{
+			position: relative;
+		}
+		#title{
+			margin: 10px 0 10px 0;
+			line-height: 40px;
+			font-size: 24px;
+			font-weight: 700;
+		}
+		button {
+			width: 80px;
+			height: 40px;
+			background-color: red;
+			border: 0;
+			color: white;
+			font-weight: 600;
+		}
+		#content{
+			background-color: pink;
+			width: 60px;
+			height: 60px;
+			border: 2px solid black;
+		}
+		#change{
+			width: 1224px;
+			height: 600px;
+			background-color: #ccc;
+			filter:alpha(opacity=50); 
+			-moz-opacity:0.5; 
+			opacity:0.5;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			display: none;
+		}
+		#changeContent{
+			width: 400px;
+			height: 280px;
+			border: 20px solid #c5c5c5;
+			background-color: white;
+			margin: 200px auto;
+		}
+		#recover{
+			margin-left: 100px;
+		}
+		#ensure{
+			margin-left: 20px;
+		}
+		#ored{ background-color: red; }
+		#oyellow{background-color: yellow;}
+		#oblue{background-color:blue;}
+	</style>
+</head>
+<body>
+	<div id="bodyContent">
+		<div id="title">
+		<span>请为下面的DIV设置样式</span>
+		<button id="set">点击设置</button>
+		</div>
+		<div id="content"></div>
+	</div>
+	
+	<div id="change">
+		<div id="changeContent">
+			<div>
+				<span>背景颜色</span>
+				<ul>
+					<li id="ored">红</li>
+					<li id="oyellow">黄</li>
+					<li id="oblue">蓝</li>
+				</ul>
+			</div>
+			<div>
+				<span>选择宽度</span>
+				<ul>
+					<li id="w1">200</li>
+					<li id="w2">300</li>
+					<li id="w3">400</li>
+				</ul>
+			</div>
+			<div>
+				<span>选择长度</span>
+				<ul>
+					<li id="h1">200</li>
+					<li id="h2">300</li>
+					<li id="h3">400</li>
+				</ul>
+			</div>
+			<button id="recover">恢复</button>
+			<button id="ensure">确定</button>	
+		</div>
+	</div>
+	<script>
+		var set=document.getElementById('set');
+		var change=document.getElementById('change');
+		var oRecover=document.getElementById('recover');
+		var oEnsure=document.getElementById('ensure');
+		var oRed=document.getElementById('ored');
+		var oYellow=document.getElementById('oyellow');
+		var oBlue=document.getElementById('oblue');
+		var w1=document.getElementById('w1');
+		var w2=document.getElementById('w2');
+		var w3=document.getElementById('w3');
+		var h1=document.getElementById('h1');
+		var h2=document.getElementById('h2');
+		var h3=document.getElementById('h3');
+		var content=document.getElementById('content');
+
+
+		//函数，闭包,透明度
+		
+		//闭包
+
+		
+		set.onclick=function(){
+			change.style.display='block';
+		};
+		function changeColor(color1){
+			return function(){
+				content.style.backgroundColor=color1;
+			}
+		}
+		function changeWidth(width1){
+			return function(){
+				content.style.width=width1+'px';
+			};
+		}
+		function changeHeight(height1){
+			return function(){
+				content.style.height=height1+'px';
+			};
+		}
+		oRed.onclick=changeColor('red');
+		oYellow.onclick=changeColor('yellow');
+		oBlue.onclick=changeColor('blue');
+		w1.onclick=changeWidth('200');
+		w2.onclick=changeWidth('300');
+		w3.onclick=changeWidth('400');
+		h1.onclick=changeHeight('200');
+		h2.onclick=changeHeight('300');
+		h3.onclick=changeHeight('400');
+		oEnsure.onclick=function(){
+			change.style.display='none';
+		};
+		oRecover.onclick=function(){
+			changeWidth('60')();
+			changeColor('pink')();
+			changeHeight('60')();
+			change.style.display='none';
+		};
+
+
+		// var a=3;
+		// var b=4;
+		// var count = function (a,b){
+		// 	var c= a+b;
+		// 	return c;
+		// }
+
+		// var d=count;
+		// var e=count(a,b);
+
+		// console.log(d);
+		// console.log(e);
+	</script>
+</body>
+</html>

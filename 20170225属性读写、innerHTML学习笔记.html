@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试</title>
+	<script>
+		window.onload=function(){
+			var oBtn =document.getElementById('btn1');
+			var oText =document.getElementById('text1');
+			var oSelect =document.getElementById('select1');
+			var oP1 =document.getElementsByTagName('p'); 
+			oBtn.onclick=function(){
+				//知识点①   调试
+				//debugger;
+				//console.log('a');
+
+				//知识点②   属性的读操作
+				// alert(oBtn.value);
+				// console.log(oBtn.id);
+				// console.log(oBtn.value);
+				// console.log(oBtn.type);
+
+				// oBtn.style.backgroundColor='pink';
+
+
+				//知识点③   字符串链接   +
+				// var name=oText.value+"在"+oSelect.value;
+				// alert(name);
+
+				// 知识点④   属性的写操作
+				//oText.value='按钮';
+				//oText.value=oSelect.value;
+
+				//知识点⑤	读取元素的html内容   innerHtml  getElementsByTagName数组
+				//debugger
+				//console.log(oP1[0].innerHtml);
+				oText.value=oP1[1].innerHTML;
+			}
+
+		}	
+	</script>
+</head>
+<body>
+	<input type="text" id="text1">
+	<select id="select1">
+		<option value="上海">上海</option>
+		<option value="江苏">江苏</option>
+		<option value="浙江">浙江</option>
+	</select>
+	<input type="button" value="按钮" id="btn1">
+	<p>你好JavaScript</p>
+	<p>好好学习天天向上</p>
+</body>
+</html>

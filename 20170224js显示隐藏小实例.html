@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js显示隐藏</title>
+	<style>
+		ul {list-style: none; padding: 0;}
+		a {text-decoration: none;}
+		ul li a {
+			width: 60px;
+			height: 30px;
+			display: inline-block;
+			text-align: center;
+			line-height: 30px;
+			background-color: pink;
+		}
+		#ul1 {
+			display: none;
+		}
+		ul li ul li {
+			width: 100px;
+			height: 30px;
+			background-color: #999;
+			text-align: center;
+			line-height: 30px;
+			
+		}
+
+	</style>
+
+</head>
+<body>
+	<div>
+		<ul>
+			<li>
+				<a href="#" id="weibo">微博</a>
+				<ul id="ul1">
+					<li>私信</li>
+					<li>评论</li>
+					<li>@我</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<script>
+		var a1=document.getElementById('weibo');
+		var ul1=document.getElementById("ul1");
+		function showHide(){
+			if( ul1.style.display=='block'){
+				ul1.style.display='none';
+				a1.style.backgroundColor='pink';
+			}else {
+				ul1.style.display='block';
+				a1.style.backgroundColor='red';
+			}
+			
+		}
+		a1.onclick= showHide;
+		
+
+		
+	</script>
+</body>
+</html>
