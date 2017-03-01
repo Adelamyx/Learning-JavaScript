@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20170301this应用demo</title>
+	<style>
+		li{
+			width: 100px;
+			height: 80px;
+			margin: 20px 20px;
+			background-color: pink;
+			position: relative;
+			float: left;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			background-color: blue;
+			display: none;
+		}
+	</style>
+	<script>
+		window.onload=function () {
+			var oUl=document.getElementsByTagName('ul');
+			var oFirstli=oUl[0].getElementsByTagName('li');
+
+			//debugger
+			//alert(oFirstli.length);
+			for(var i=0;i<oFirstli.length;i++){
+				oFirstli[i].onmousemove=function(){
+					var oDiv=this.getElementsByTagName('div');
+					oDiv[0].style.display='block';
+				}
+				oFirstli[i].onmouseout=function(){
+					var oDiv=this.getElementsByTagName('div');
+					oDiv[0].style.display='none';
+				}
+				
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li>
+			1
+			<div></div>
+		</li>
+		<li>
+			2
+			<div></div>
+		</li>
+		<li>	
+			3
+			<div></div>
+		</li>
+	</ul>
+</body>
+</html>
