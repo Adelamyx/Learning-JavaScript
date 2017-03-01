@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20170301自定义属性</title>
+	<style>
+		li{
+			list-style: none;
+			width: 200px;
+			height: 160px;
+			background-color: pink;
+			float: left;
+			margin: 30px;
+			font-size: 35px;
+			text-align: center;
+			line-height: 160px;
+		}
+		.active{
+			font-size: 60px;
+		}
+		.hover{
+			font-size: 35px;
+		}
+
+	</style>
+	<script>
+		window.onload=function () {
+			var oLi=document.getElementsByTagName('li');
+			//alert(oLi.length);
+			for(var i=0;i<oLi.length;i++){
+				oLi[i].onF='true';
+				oLi[i].className="active";
+				oLi[i].onclick=function(){
+				//debugger
+					if(this.onF=='true'){
+						this.style.backgroundColor='blue';
+						this.onF='false';
+						this.className="hover";
+					}else{
+						this.style.backgroundColor='pink';
+						this.onF='true';
+						this.className="active";
+					}
+					
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+</html>

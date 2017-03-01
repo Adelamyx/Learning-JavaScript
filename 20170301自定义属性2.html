@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20170301自定义属性2</title>
+	<style>
+		input{
+			width: 80px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 30px;
+			text-align: center;
+			margin: 20px;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oInput=document.getElementsByTagName('input');
+			var oArr=['A','B','C','D'];
+			//alert(oInput.length);
+			for(var i=0;i<oInput.length;i++){
+				oInput[i].num=0;
+				oInput[i].onclick=function(){
+					//debugger
+					this.value=oArr[this.num];
+					this.num++;
+					if(this.num==oArr.length){
+						this.num=0;
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="">
+	<input type="button" value="">
+	<input type="button" value="">
+</body>
+</html>

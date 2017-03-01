@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20170301图片切换</title>
+	<style>
+		div{
+			position: relative;
+			margin: 0px auto;
+			width: 400px;
+		}
+		ul{
+			padding: 0px;
+			margin: 0px;
+			list-style: none;
+		}
+		li{
+			width: 60px;
+			height: 38px;
+			background-color: #ccc;
+			line-height: 38px;
+			text-align: center;
+			font-size: 20px;
+			position: absolute;
+			right: -70px;
+		}
+		img{
+			width: 400px;
+			height: 300px;
+			
+			/* position: relative; */
+
+		}
+		.active{
+			background-color: yellow;
+		}
+	</style>
+	<script>
+		window.onload=function () {
+			var oLi=document.getElementsByTagName('li');
+			var oImg=document.getElementsByTagName('img');
+			var oArry=['img/img1.jpg','img/img2.jpg','img/img3.jpg','img/img4.jpg'];
+			//var onF=true;
+			for(var i=0;i<oLi.length;i++){
+				//oLi[i].index=i;
+				//debugger
+				oLi[i].style.top=50*i+'px';
+				oLi[i].index=i;
+				oLi[i].onF=true;
+				function change(a1){
+					oImg[0].src=oArry[a1];
+					if(oLi[a1].onF){
+						oLi[a1].className='active';
+						oLi[a1].onF=false;
+					}else{
+						oLi[a1].className='';
+						oLi[a1].onF=true;
+					}	
+				}
+				oLi[i].onmouseover=function(){
+					// oImg[0].src=oArry[this.index];
+					// if(oLi[this.index].onF){
+					// 	oLi[this.index].className='active';
+					// 	oLi[this.index].onF=false;
+					// }else{
+					// 	oLi[this.index].className='';
+					// 	oLi[this.index].onF=true;
+					// }	
+					change(this.index);
+				}
+				oLi[i].onmouseout=function(){
+					// oImg[0].src=oArry[this.index];
+					// if(oLi[this.index].onF){
+					// 	oLi[this.index].className='active';
+					// 	oLi[this.index].onF=false;
+					// }else{
+					// 	oLi[this.index].className='';
+					// 	oLi[this.index].onF=true;
+					// }
+					change(this.index);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<img src="img/img1.jpg" alt="">
+		<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	</div>
+	
+</body>
+</html>

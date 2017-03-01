@@ -9,13 +9,17 @@
 			//alert(oLis[0].innerHTML);
 			var oBtns=document.getElementsByTagName('input');
 			//alert(oBtns.length);
+			var oColor=['pink','red','yellow'];
 
 			for(var i=0;i<3;i++){
+				oBtns[i].index=i;
 				oBtns[i].onclick=function(){
 					//alert(oBtns.length);
 					// oBtns[i].length;
 					// oLis[i].style.backgroundColor='blue';
-					alert(i);
+					//alert(i);
+					oLis[this.index].style.backgroundColor=oColor[this.index];
+
 				}
 				//alert(i);
 				//oLis[i].style.backgroundColor='pink';

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20170301自定义属性3</title>
+	<style>
+		input{
+			width: 80px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oInput=document.getElementsByTagName('input');
+			var oP=document.getElementsByTagName('p');
+			var oArry=['张三','李四','王五'];
+			for(var i=0;i<oInput.length;i++){
+				oInput[i].num=i;
+				oInput[i].onclick=function(){
+					// alert(this.num);//闭包不能直接用i，可以使用js自定义属性
+					//debugger
+
+					this.value=oArry[this.num];
+					oP[this.num].innerHTML=oArry[this.num];
+
+				}
+			}
+		}
+		
+	</script>
+</head>
+<body>
+	<input type="button" value="button1">
+	<input type="button" value="button2">
+	<input type="button" value="button3">
+	<p>a</p>
+	<p>b</p>
+	<p>c</p>
+</body>
+</html>
