@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getElementsByTagName</title>
+	<script>
+		window.onload=function(){
+			var oLis=document.getElementsByTagName('li');
+			//alert(oLis[0].innerHTML);
+			var oBtns=document.getElementsByTagName('input');
+			//alert(oBtns.length);
+
+			for(var i=0;i<3;i++){
+				oBtns[i].onclick=function(){
+					//alert(oBtns.length);
+					// oBtns[i].length;
+					// oLis[i].style.backgroundColor='blue';
+					alert(i);
+				}
+				//alert(i);
+				//oLis[i].style.backgroundColor='pink';
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<ul>
+		<li>qqq</li>
+		<li>NIHAO </li>
+		<li>MMED </li>
+		<li>kkkkk</li>
+	</ul>
+	<input type="button" value="按钮"/>
+	<input type="button" value="按钮"/>
+	<input type="button" value="按钮"/>
+</body>
+</html>
